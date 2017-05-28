@@ -39,8 +39,11 @@ def print_footer(names)
   puts "Overall, we have #{names.count} great students".center(50)
 end
 
-
 students = input_students
-print_header
-print(students)
-print_footer(students)
+if students.count == 0
+  puts "No students were entered."
+else
+  print_header
+  print(students)
+  print_footer(students)
+end
