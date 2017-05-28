@@ -4,10 +4,10 @@ def input_students
   #create empty array#
   students= []
   #get the first name
-  name = gets.chomp
+  name = STDIN.gets.gsub("\n",'')
   while !name.empty? do
     puts "Please enter this person's cohort"
-    cohort= gets.chomp
+    cohort= STDIN.gets.gsub("\n",'')
       if cohort.empty?
         cohort = "unknown"
       end
@@ -19,7 +19,7 @@ def input_students
     end
     puts "Now we have #{students.count} " + word
     # get another name from the user
-    name = gets.chomp
+    name = STDIN.gets.gsub("\n",'')
   end
   students
 end
