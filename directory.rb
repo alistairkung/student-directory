@@ -1,5 +1,9 @@
 @students= [] #empty array accessable to all methods
 
+def append_to_students(name, cohort)
+  @students << {name: name, cohort: cohort}
+end
+
 def input_students
   puts "Please enter he names of the students"
   puts "To finish, just hit return twice"
@@ -11,7 +15,7 @@ def input_students
       if cohort.empty?
         cohort = "unknown"
       end
-    @students << {name: name, cohort: cohort}
+    append_to_students(name, cohort)
     if @students.count == 1
       word = "student"
     else
@@ -64,7 +68,7 @@ def load_students(filename = "students.csv")
   file = File.open(filename, "r")
   file.readlines.each do |line|
     name, cohort = line.chomp.split(',')
-    @students << {name: name, cohort: cohort.to_sym}
+    append_to_students(name, cohort)
   end
   file.close
 end
