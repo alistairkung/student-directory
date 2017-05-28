@@ -12,7 +12,12 @@ def input_students
         cohort = "unknown"
       end
     students << {name: name, cohort: cohort}
-    puts "Now we have #{students.count} students"
+    if students.count == 1
+      word = "student"
+    else
+      word = "students"
+    end
+    puts "Now we have #{students.count} " + word
     # get another name from the user
     name = gets.chomp
   end
@@ -33,6 +38,7 @@ end
 def print_footer(names)
   puts "Overall, we have #{names.count} great students".center(50)
 end
+
 
 students = input_students
 print_header
