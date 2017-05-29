@@ -62,6 +62,8 @@ def save_students
     file.puts student_data
     end
   }
+  puts "Directory Saved."
+  puts
 end
 
 def load_students(filename = "students.csv")
@@ -69,6 +71,8 @@ def load_students(filename = "students.csv")
     name, cohort = line[0], line[1]
     append_to_students(name, cohort)
   end
+  puts "Students Loaded"
+  puts
 end
 
 def try_load_students
